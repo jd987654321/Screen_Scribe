@@ -19,7 +19,7 @@ local function updateCanvasSettings()
 		frame = {x = 0, y = 0, w = 0, h = 0},
 		fillColor = {red = 1, green = 1 , blue = 1, alpha = 0.5},
 		strokeColor = {red = 1, green = 1, blue = 1, alpha = 1},
-		strokeWidth = 3
+		strokeWidth = 1
 	}
 end
 
@@ -55,7 +55,7 @@ local function getTextFromImg(pathToImg)
 	local status, code, signal = os.execute("/opt/homebrew/bin/tesseract " .. terminalPathToImg .. " ./screen_scribe/imageText -l eng")
 	local textFile = io.open("./screen_scribe/imageText.txt", "r")
 	local textFromFile = textFile:read("*a")
-	--hs.pasteboard.writeObjects(textFromFile)
+	hs.pasteboard.writeObjects(textFromFile)
 end
 
 local function screenshot(rect)

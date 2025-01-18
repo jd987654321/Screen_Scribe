@@ -30,7 +30,7 @@ if [ $brewIsInstalled -eq 0 ]; then
     if [ "$answer" == "y" ] || [ "$answer" == "Y" ]; then
         echo "Awesome lemme just install those for ya"
         brew install tesseract hammerspoon
-        mkdir ~/.hammerspoon ~/.hammerspoon/Spoons ~/.hammerspoon/Screen_Scribe ~/.hammerspoon/Screen_Scribes/hs_images
+        mkdir ~/.hammerspoon ~/.hammerspoon/Spoons ~/.hammerspoon/Screen_Scribe ~/.hammerspoon/Screen_Scribe/hs_images
         touch ~/.hammerspoon/init.lua
         cat init.lua >> ~/.hammerspoon/init.lua
     elif [ "$answer" == "n" ] || [ "$answer" == "N" ]; then
