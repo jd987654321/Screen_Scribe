@@ -25,15 +25,15 @@ end
 
 updateCanvasSettings()
 
-local test = hs.canvas.new({x = 0, y = 0, w = 5000, h = 5000})
-test[1] = {
-	type = "rectangle",
-	frame = {x = 0, y = 0, w = 5000, h = 5000},
-	fillColor = {red = 1, green = 1 , blue = 1, alpha = 0.2},
-	strokeColor = {red = 1, green = 1, blue = 1, alpha = 1},
-	strokeWidth = 3
-}
-test:show()
+-- local test = hs.canvas.new({x = 0, y = 0, w = 5000, h = 5000})
+-- test[1] = {
+-- 	type = "rectangle",
+-- 	frame = {x = 0, y = 0, w = 5000, h = 5000},
+-- 	fillColor = {red = 1, green = 1 , blue = 1, alpha = 0.2},
+-- 	strokeColor = {red = 1, green = 1, blue = 1, alpha = 1},
+-- 	strokeWidth = 3
+-- }
+-- test:show()
 
 -- local handle = io.popen("system_profiler SPDisplaysDataType | grep Resolution")
 -- local result = handle:read("*a")
@@ -59,7 +59,7 @@ local function getTextFromImg(pathToImg)
 end
 
 local function screenshot(rect)
-	local folderPath = os.getenv("HOME") .. "/.hammerspoon/screen_scribe/hs_images/"
+	local folderPath = os.getenv("HOME") .. "/.hammerspoon/Screen_Scribe/hs_images/"
 	local time = os.date("%H;%M;%S")
 	local date = os.date("%d;%m;%Y")
 	local dateAndTime = date .. "_" .. time
