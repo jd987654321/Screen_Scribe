@@ -51,11 +51,11 @@ updateCanvasSettings()
 
 local function getTextFromImg(pathToImg)
 	local terminalPathToImg = string.gsub(pathToImg, ";", "\\;")
-	hs.alert.show("point")
+	--hs.alert.show("point")
 	local status, code, signal = os.execute("/opt/homebrew/bin/tesseract " .. terminalPathToImg .. " ./screen_scribe/imageText -l eng")
 	local textFile = io.open("./screen_scribe/imageText.txt", "r")
 	local textFromFile = textFile:read("*a")
-	hs.pasteboard.writeObjects(textFromFile)
+	--hs.pasteboard.writeObjects(textFromFile)
 end
 
 local function screenshot(rect)
@@ -65,7 +65,7 @@ local function screenshot(rect)
 	local dateAndTime = date .. "_" .. time
 	local imageName = "ss_" .. dateAndTime .. ".png"
 	local imagePath = folderPath .. imageName .. ""
-	hs.alert.show(imagePath)
+	--hs.alert.show(imagePath)
 	hs.screen.mainScreen():shotAsPNG(imagePath, rect)
 	getTextFromImg(imagePath)
 end
@@ -75,7 +75,7 @@ end
 hs.hotkey.bind({"cmd", "shift"}, "2", 
 	function()
 		--startSnapscribe = true
-		hs.alert.show("lets snap")
+		--hs.alert.show("lets snap")
 		MyEventTap:start()
 	end
 )
@@ -83,7 +83,7 @@ hs.hotkey.bind({"cmd", "shift"}, "2",
 hs.hotkey.bind({"cmd", "shift"} , "1", 
 	function()
 		--clearPasteboard()
-		hs.alert.show("stopping")
+		--hs.alert.show("stopping")
 		MyEventTap:stop()
 	end
 )
@@ -137,8 +137,8 @@ MyEventTap = hs.eventtap.new({
 			canvas:show()
 			if type == types.leftMouseDown then
 
-				hs.alert.show(screenName)
-				hs.alert.show(hs.screen.mainScreen():name())
+				--hs.alert.show(screenName)
+				--hs.alert.show(hs.screen.mainScreen():name())
 
 				if screenName ~= hs.screen.mainScreen():name() then
 					updateCanvasSettings()
